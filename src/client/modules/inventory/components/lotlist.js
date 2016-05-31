@@ -1,15 +1,20 @@
 import React from 'react';
+import Griddle from 'griddle-react';
 
-const LotList = ({ lots }) => (
-  <div className='lotlist'>
-    <ul>
-      {lots.map(lot => (
-        <li key={lot._id}>
-          <a href={`/lot/${lot._id}`}>{lot.recordId} {lot.productName}</a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+class LotList extends React.Component {
+  render() {
+    return (
+      <Griddle
+        results={this.props.lots}
+        showFilter={true}
+        columns={[ 'recordId', 'productName' ]}
+      />
+    );
+  }
+}
+
+LotList.propTypes = {
+  lots: React.PropTypes.array
+};
 
 export default LotList;

@@ -4,7 +4,7 @@ import Navigation from './navigation';
 const Layout = ({content = () => null }) => (
   <div>
     <header>
-      <h1>Mantra Voice</h1>
+      <h1>Mantra Inventory</h1>
       <Navigation />
     </header>
 
@@ -13,7 +13,9 @@ const Layout = ({content = () => null }) => (
     </div>
 
     <footer>
-      <small>Built with <a href='https://github.com/kadirahq/mantra'>Mantra</a> & Meteor.</small>
+      <small>
+        Built with <a href='https://github.com/kadirahq/mantra'>Mantra</a>, Meteor, & Webpack.
+      </small>
     </footer>
   </div>
 );

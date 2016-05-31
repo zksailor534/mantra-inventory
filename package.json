@@ -1,7 +1,7 @@
 {
-  "name": "kickstart-mantrajs-webpack",
-  "version": "1.0.0",
-  "description": "Kickstart a project with Meteor, React and react-router fast!",
+  "name": "mantra-inventory",
+  "version": "0.0.1",
+  "description": "Inventory application using MantraJS with Meteor",
   "main": "src/server.js",
   "browser": "src/client.js",
   "scripts": {
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
+    "griddle-react": "^0.5.1",
     "mantra-core": "^1.2.0",
     "react": "^15.x.x",
     "react-addons-create-fragment": "^15.x.x",
