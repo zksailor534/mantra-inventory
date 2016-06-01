@@ -11,7 +11,7 @@ export default function (injectDeps) {
   const MainLayoutCtx = injectDeps(MainLayout);
 
   // Move these as a module and call this from a main file
-  FlowRouter.route('/lotlist', {
+  FlowRouter.route('/inventory/list', {
     name: 'lots.list',
     action() {
       mount(MainLayoutCtx, {
@@ -20,7 +20,7 @@ export default function (injectDeps) {
     }
   });
 
-  FlowRouter.route('/lot/:lotId', {
+  FlowRouter.route('/inventory/lot/:lotId', {
     name: 'lots.single',
     action({ lotId }) {
       mount(MainLayoutCtx, {
@@ -29,7 +29,7 @@ export default function (injectDeps) {
     }
   });
 
-  FlowRouter.route('/new-lot', {
+  FlowRouter.route('/inventory/new', {
     name: 'newlot',
     action() {
       mount(MainLayoutCtx, {

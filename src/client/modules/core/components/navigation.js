@@ -3,8 +3,9 @@ import React from 'react';
 const Navigation = () => (
   <div>
     <b> Navigation: </b>
-    <a href="/lotlist">Home</a> |
-    <a href="/new-lot">New Lot</a>
+    <a href="/">Home</a> |
+    <a href="/inventory/list">Inventory</a> |
+    <a href="/inventory/new">New Lot</a>
   </div>
 );
 
