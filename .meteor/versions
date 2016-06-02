@@ -82,4 +82,5 @@ webpack:json@1.0.1
 webpack:npmworkaround@1.0.0
 webpack:react@1.2.2
 webpack:reload@1.0.1
+webpack:sass@1.1.2
 webpack:webpack@1.3.2
