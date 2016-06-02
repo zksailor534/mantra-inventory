@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'react-mounter';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import MainLayout from 'client/modules/core/components/layout.main';
+import MainLayout from 'client/modules/core/components/main_layout';
 import LotList from 'client/modules/inventory/containers/lotlist';
 import LotDetail from 'client/modules/inventory/containers/lotdetail';
 import NewLot from 'client/modules/inventory/containers/newlot';
