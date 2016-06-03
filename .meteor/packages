@@ -25,3 +25,4 @@ kadira:flow-router
 standard-minifier-js
 standard-minifier-css
 react-meteor-data
+std:accounts-bootstrap
