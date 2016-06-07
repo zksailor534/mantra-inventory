@@ -6,13 +6,7 @@ export default function () {
   Meteor.publish('lots.list', function () {
     const selector = {};
     const options = {
-      fields: {
-        _id: 1,
-        recordId: 1,
-        productName: 1
-      },
-      sort: {createdAt: -1},
-      limit: 10
+      sort: {createdAt: -1}
     };
 
     return Lots.find(selector, options);
