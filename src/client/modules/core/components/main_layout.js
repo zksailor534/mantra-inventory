@@ -4,7 +4,6 @@ import Navigation from './navigation';
 const Layout = ({content = () => null }) => (
   <div>
     <header>
-      <h1>Mantra Inventory</h1>
       <Navigation />
     </header>
 

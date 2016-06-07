@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Navigation from '../navigation';
 
-describe('components.navigations', () => {
+describe('components.navigation', () => {
   it('should contain a link to home', () => {
     const el = shallow(<Navigation />);
     const homeLink = el.find('a').at(0);
@@ -11,10 +11,17 @@ describe('components.navigations', () => {
     expect(homeLink.prop('href')).to.be.equal('/');
   });
 
-  it('should contain a link to create a new post', () => {
+  it('should contain a link to inventory', () => {
     const el = shallow(<Navigation />);
-    const newPostLink = el.find('a').at(1);
-    expect(newPostLink.text()).to.be.equal('New Post');
-    expect(newPostLink.prop('href')).to.be.equal('/new-post');
+    const inventoryLink = el.find('a').at(0);
+    expect(inventoryLink.text()).to.be.equal('Inventory');
+    expect(inventoryLink.prop('href')).to.be.equal('/inventory/list');
+  });
+
+  it('should contain a link to create a new lot', () => {
+    const el = shallow(<Navigation />);
+    const newLotLink = el.find('a').at(1);
+    expect(newLotLink.text()).to.be.equal('New Lot');
+    expect(newLotLink.prop('href')).to.be.equal('/inventory/new');
   });
 });
