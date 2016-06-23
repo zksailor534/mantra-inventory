@@ -7,7 +7,7 @@ const Layout = ({content = () => null }) => (
       <Navigation />
     </header>
 
-    <div>
+    <div id="content-container">
       {content()}
     </div>
 
