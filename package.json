@@ -23,6 +23,7 @@
     "react-addons-transition-group": "^15.x.x",
     "react-addons-update": "^15.x.x",
     "react-bootstrap": "^0.29.4",
+    "react-bootstrap-table": "^2.3.6",
     "react-dom": "^15.x.x",
     "react-mounter": "^1.2.0"
   },
@@ -60,6 +61,8 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
-    "webpack-hot-middleware": "^2.4.1"
+    "webpack-hot-middleware": "^2.4.1",
+    "less-loader": "^2.2.2",
+    "less": "^2.3.1"
   }
 }
