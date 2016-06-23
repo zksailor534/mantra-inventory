@@ -1,4 +1,4 @@
-import { Lots } from 'lib/collections';
+import { Lots, Orders } from 'lib/collections';
 
 export default function () {
   if (!Lots.findOne()) {
@@ -19,6 +19,18 @@ export default function () {
         vendor,
         description,
         price
+      });
+    }
+  }
+
+  if (!Orders.findOne()) {
+    for (let lc = 1; lc <= 9; lc++) {
+      const orderNo = `11100${lc}`;
+      const customerName = `Business ${lc}`;
+
+      Orders.insert({
+        orderNo,
+        customerName
       });
     }
   }
