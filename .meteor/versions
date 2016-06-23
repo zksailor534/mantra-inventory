@@ -36,6 +36,7 @@ id-map@1.0.8
 jquery@1.11.9
 kadira:flow-router@2.12.1
 launch-screen@1.0.12
+less@2.6.3
 livedata@1.0.18
 localstorage@1.0.11
 logging@1.0.13
@@ -86,6 +87,7 @@ webpack:assets@1.0.1
 webpack:core-config@1.0.1
 webpack:css@1.1.2
 webpack:json@1.0.1
+webpack:less@1.1.2
 webpack:npmworkaround@1.0.0
 webpack:react@1.2.2
 webpack:reload@1.0.1

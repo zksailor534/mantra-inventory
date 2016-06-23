@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
+    "griddle-react": "^0.5.1",
     "mantra-core": "^1.2.0",
     "react": "^15.x.x",
     "react-addons-create-fragment": "^15.x.x",
@@ -60,6 +61,8 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
-    "webpack-hot-middleware": "^2.4.1"
+    "webpack-hot-middleware": "^2.4.1",
+    "less-loader": "^2.2.2",
+    "less": "^2.3.1"
   }
 }

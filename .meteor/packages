@@ -18,6 +18,8 @@ webpack:webpack
 webpack:react
 webpack:css
 webpack:assets
+webpack:less
+less
 
 accounts-password
 kadira:flow-router
