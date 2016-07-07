@@ -1,22 +1,28 @@
 import React from 'react';
 import Navigation from './navigation';
 
-const Layout = ({content = () => null }) => (
-  <div>
-    <header>
-      <Navigation />
-    </header>
+export default class Layout extends React.Component {
+  render() {
+    return (
+      <div>
+        <header>
+          <Navigation />
+        </header>
 
-    <div id="content-container">
-      {content()}
-    </div>
+        <div id="content-container">
+          {this.props.content()}
+        </div>
 
-    <footer>
-      <small>
-        Built with <a href='https://github.com/kadirahq/mantra'>Mantra</a>, Meteor, & Webpack.
-      </small>
-    </footer>
-  </div>
-);
+        <footer>
+          <small>
+            Built with <a href='https://github.com/kadirahq/mantra'>Mantra</a>, Meteor, & Webpack.
+          </small>
+        </footer>
+      </div>
+    );
+  }
+}
 
-export default Layout;
+Layout.propTypes = {
+  content: React.PropTypes.func,
+};
