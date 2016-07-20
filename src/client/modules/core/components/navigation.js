@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/Navitem';
+import NavDropdown from 'react-bootstrap/lib/NavDropdown';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
 
 class Navigation extends React.Component {
   render() {
@@ -15,9 +17,10 @@ class Navigation extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href='/'>Home</NavItem>
-            <NavItem eventKey={2} href='/inventory/list'>Inventory</NavItem>
-            <NavItem eventKey={3} href='/inventory/new'>New Lot</NavItem>
+            <NavDropdown eventKey={1} title="Inventory" id="inventory-dropdown">
+              <MenuItem eventKey={1.1} href='/inventory/list'>Manage</MenuItem>
+              <MenuItem eventKey={1.2} href='/inventory/new'>New Item</MenuItem>
+            </NavDropdown>
           </Nav>
           <Nav pullRight>
             <NavItem eventKey={'login'} href='/login'>Login</NavItem>

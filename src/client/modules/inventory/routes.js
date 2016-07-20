@@ -12,7 +12,7 @@ export default function (injectDeps) {
 
   // Move these as a module and call this from a main file
   FlowRouter.route('/inventory/list', {
-    name: 'lots.list',
+    name: 'lots.manage',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<LotList />)
