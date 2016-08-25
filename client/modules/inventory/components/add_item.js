@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class AddItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.defaultState = {
       category: 'Beams',
       product: 'Beam',
       recordId: '',
@@ -14,6 +14,7 @@ class AddItem extends Component {
       manufacturer: 'Company A',
       description: '',
     };
+    this.state = this.defaultState;
   }
 
   handleSubmit(e) {
@@ -24,6 +25,8 @@ class AddItem extends Component {
     const { additem } = this.props;
 
     additem(this.state);
+
+    this.setState(this.defaultState);
   }
 
   setValue(field, event) {
