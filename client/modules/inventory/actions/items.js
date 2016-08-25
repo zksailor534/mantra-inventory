@@ -1,6 +1,9 @@
 export default {
-  additem({ Meteor }, recordId, productName, quantity) {
-    const id = Meteor.uuid();
-    Meteor.call('items.add', id, recordId, productName, quantity);
+  additem({ Meteor }, item) {
+    Meteor.call(
+      'items.add',
+      Meteor.uuid(),
+      item
+    );
   },
 };

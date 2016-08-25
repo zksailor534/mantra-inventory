@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 
 export default function () {
   Meteor.methods({
-    'items.add'(_id, recordId, productName, quantity) {
+    'items.add'(_id, itemData) {
       // check(_id, String);
       // check(recordId, String);
       // check(productName, String);
@@ -13,9 +13,10 @@ export default function () {
       const createdAt = new Date();
       const item = {
         _id,
-        recordId,
-        productName,
-        onHand: quantity,
+        recordId: itemData.recordId,
+        productName: itemData.productName,
+        onHand: itemData.quantity,
+        origQty: itemData.quantity,
         createdAt,
       };
       Items.insert(item);

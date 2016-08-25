@@ -10,11 +10,13 @@ class AddItem extends Component {
     const { additem } = this.props;
     const { recordIdRef, productNameRef, quantityRef } = this.refs;
 
-    additem(
-      recordIdRef.value,
-      productNameRef.value,
-      quantityRef.value
-    );
+    const item = {
+      recordId: recordIdRef.value,
+      productName: productNameRef.value,
+      quantity: quantityRef.value,
+    };
+
+    additem(item);
   }
 
   render() {

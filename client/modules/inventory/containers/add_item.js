@@ -1,12 +1,13 @@
-import { useDeps, composeAll, composeWithTracker, compose } from 'mantra-core';
+// import { useDeps, composeAll, composeWithTracker, compose } from 'mantra-core';
+import { useDeps, composeAll } from 'mantra-core';
 
 import AddItem from '../components/add_item';
 
-export const composer = ({ context }, onData) => {
-  // const {Meteor, Collections} = context();
-
-  onData(null, {});
-};
+// export const composer = ({ context }, onData) => {
+//   const {Meteor, Collections} = context();
+//
+//   onData(null, {});
+// };
 
 export const depsMapper = (context, actions) => ({
   additem: actions.items.additem,
@@ -14,6 +15,6 @@ export const depsMapper = (context, actions) => ({
 });
 
 export default composeAll(
-  composeWithTracker(composer),
+  // composeWithTracker(composer),
   useDeps(depsMapper)
 )(AddItem);
