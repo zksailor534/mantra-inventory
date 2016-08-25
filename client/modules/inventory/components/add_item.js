@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/lib/Form';
+import FormGroup from 'react-bootstrap/lib/FormGroup';
+import Col from 'react-bootstrap/lib/Col';
+import ControlLabel from 'react-bootstrap/lib/ControlLabel';
+import FormControl from 'react-bootstrap/lib/FormControl';
+import HelpBlock from 'react-bootstrap/lib/HelpBlock';
+import Button from 'react-bootstrap/lib/Button';
 
-// Item component - represents a single inventory item
+const FieldGroup = ({ id, label, help, ...props }) => (
+  <FormGroup controlId={id}>
+    <Col componentClass={ControlLabel} xs={3} sm={3} md={3} lg={3}>
+      {label}
+    </Col>
+    <Col xs={9} sm={9} md={9} lg={9}>
+      <FormControl {...props} />
+    </Col>
+    {help && <HelpBlock>{help}</HelpBlock>}
+  </FormGroup>
+);
+
+// Add Item component
 class AddItem extends Component {
   constructor(props) {
     super(props);
@@ -37,175 +56,125 @@ class AddItem extends Component {
 
   render() {
     return (
-      <form
-        className="form-horizontal new-item"
+      <Form
+        horizontal
         onSubmit={this.handleSubmit.bind(this)}
       >
-        <fieldset>
 
         {/* Form Name */}
         <legend>Add Item</legend>
 
-        {/* Select Category */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="category">Category*</label>
-          <div className="col-md-4">
-            <select
-              id="category"
-              name="category"
-              className="form-control"
-              required
-              value={this.state.category}
-              onChange={this.setValue.bind(this, 'category')}
-            >
-              <option value="Beams">Beams</option>
-              <option value="Frames">Frames</option>
-            </select>
-          </div>
-        </div>
+        <Col xs={12} sm={12} md={6} lg={4}>
+          {/* Select Category */}
+          <FieldGroup
+            id="category"
+            label="Category"
+            componentClass="select"
+            required
+            value={this.state.category}
+            onChange={this.setValue.bind(this, 'category')}
+          >
+            <option value="Beams">Beams</option>
+            <option value="Frames">Frames</option>
+          </FieldGroup>
 
-        {/* Select Product */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="product">Product*</label>
-          <div className="col-md-4">
-            <select
-              id="product"
-              name="product"
-              className="form-control"
-              required
-              value={this.state.product}
-              onChange={this.setValue.bind(this, 'product')}
-            >
-              <option value="Beam">Beam</option>
-              <option value="Frame">Frame</option>
-            </select>
-          </div>
-        </div>
+          {/* Select Product */}
+          <FieldGroup
+            id="product"
+            label="Product"
+            componentClass="select"
+            required
+            value={this.state.product}
+            onChange={this.setValue.bind(this, 'product')}
+          >
+            <option value="Beam">Beam</option>
+            <option value="Frame">Frame</option>
+          </FieldGroup>
 
-        {/* Record ID input*/}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="recordid">Record ID*</label>
-          <div className="col-md-4">
-            <input
-              id="recordid"
-              name="recordid"
-              type="text"
-              placeholder="XX-0000"
-              className="form-control input-md"
-              required
-              value={this.state.recordId}
-              onChange={this.setValue.bind(this, 'recordId')}
-            />
-          </div>
-        </div>
+          {/* Record ID input*/}
+          <FieldGroup
+            id="recordid"
+            type="text"
+            label="Record ID*"
+            placeholder="XX-0000"
+            required
+            value={this.state.recordId}
+            onChange={this.setValue.bind(this, 'recordId')}
+          />
 
-        {/* Quantity input*/}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="quantity">Quantity*</label>
-          <div className="col-md-4">
-            <input
-              id="quantity"
-              name="quantity"
-              type="number"
-              className="form-control input-md"
-              required
-              value={this.state.quantity}
-              onChange={this.setValue.bind(this, 'quantity')}
-            />
-          </div>
-        </div>
+          {/* Quantity input*/}
+          <FieldGroup
+            id="quantity"
+            type="number"
+            label="Quantity*"
+            required
+            value={this.state.quantity}
+            onChange={this.setValue.bind(this, 'quantity')}
+          />
 
-        {/* Select Style */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="style">Style</label>
-          <div className="col-md-4">
-            <select
-              id="style"
-              name="style"
-              className="form-control"
-              value={this.state.style}
-              onChange={this.setValue.bind(this, 'style')}
-            >
-              <option value="Step">Step</option>
-              <option value="3/4 Step">3/4 Step</option>
-            </select>
-          </div>
-        </div>
+          {/* Select Style */}
+          <FieldGroup
+            id="style"
+            label="Style"
+            componentClass="select"
+            value={this.state.style}
+            onChange={this.setValue.bind(this, 'style')}
+          >
+            <option value="Step">Step</option>
+            <option value="3/4 Step">3/4 Step</option>
+          </FieldGroup>
+        </Col>
 
-        {/* Select Vendor */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="vendor">Vendor</label>
-          <div className="col-md-4">
-            <select
-              id="vendor"
-              name="vendor"
-              className="form-control"
-              value={this.state.vendor}
-              onChange={this.setValue.bind(this, 'vendor')}
-            >
-              <option value="Company A">Company A</option>
-              <option value="Company B">Company B</option>
-            </select>
-          </div>
-        </div>
+        <Col xs={12} sm={12} md={6} lg={4}>
+          {/* Select Vendor */}
+          <FieldGroup
+            id="vendor"
+            label="Vendor"
+            componentClass="select"
+            value={this.state.vendor}
+            onChange={this.setValue.bind(this, 'vendor')}
+          >
+            <option value="Company A">Company A</option>
+            <option value="Company B">Company B</option>
+          </FieldGroup>
 
-        {/* Select Manufacturer */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="manufacturer">Manufacturer</label>
-          <div className="col-md-4">
-            <select
-              id="manufacturer"
-              name="manufacturer"
-              className="form-control"
-              value={this.state.manufacturer}
-              onChange={this.setValue.bind(this, 'manufacturer')}
-            >
-              <option value="Company A">Company A</option>
-              <option value="Company B">Company B</option>
-            </select>
-          </div>
-        </div>
+          {/* Select Manufacturer */}
+          <FieldGroup
+            id="manufacturer"
+            label="Manufacturer"
+            componentClass="select"
+            value={this.state.manufacturer}
+            onChange={this.setValue.bind(this, 'manufacturer')}
+          >
+            <option value="Company A">Company A</option>
+            <option value="Company B">Company B</option>
+          </FieldGroup>
 
-        {/* Textarea */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="description">Description</label>
-          <div className="col-md-4">
-            <textarea
-              className="form-control"
-              id="description"
-              name="description"
-              value={this.state.description}
-              onChange={this.setValue.bind(this, 'description')}
-            >
-            </textarea>
-          </div>
-        </div>
+          {/* Textarea */}
+          <FieldGroup
+            id="description"
+            label="Description"
+            componentClass="textarea"
+            value={this.state.description}
+            onChange={this.setValue.bind(this, 'description')}
+          />
 
-        {/* File Button */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="image">Choose Image</label>
-          <div className="col-md-4">
-            <input id="image" name="image" className="input-file" type="file" />
-          </div>
-        </div>
+          {/* File Button */}
+          <FieldGroup
+            id="image"
+            label="Image"
+            type="file"
+          />
+        </Col>
 
         {/* Button */}
-        <div className="form-group">
-          <label className="col-md-4 control-label" htmlFor="save"></label>
-          <div className="col-md-4">
-            <button
-              id="save"
-              name="save"
-              type="submit"
-              className="btn btn-primary"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-
-        </fieldset>
-      </form>
+        <Button
+          type="submit"
+          bsStyle="primary"
+        >
+          Save
+        </Button>
+      </Form>
     );
   }
 }

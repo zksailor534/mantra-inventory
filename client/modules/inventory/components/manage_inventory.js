@@ -1,58 +1,44 @@
 import React, { Component, PropTypes } from 'react';
+import Table from 'react-bootstrap/lib/Table';
 
 // App component - represents the whole app
 class ManageInventory extends Component {
   renderItems() {
-    const tdStyle = {
-      border: '1px solid black',
-      padding: '5px',
-    };
-
     return this.props.items.map((item) => (
       <tr key={item._id}>
-        <td style={tdStyle}>{item.recordId}</td>
-        <td style={tdStyle}>{item.product}</td>
-        <td style={tdStyle}>{item.category}</td>
-        <td style={tdStyle}>{item.onHand}</td>
-        <td style={tdStyle}>{item.origQty}</td>
-        <td style={tdStyle}>{item.style}</td>
-        <td style={tdStyle}>{item.vendor}</td>
-        <td style={tdStyle}>{item.manufacturer}</td>
-        <td style={tdStyle}>{item.description}</td>
+        <td>{item.recordId}</td>
+        <td>{item.product}</td>
+        <td>{item.category}</td>
+        <td>{item.onHand}</td>
+        <td>{item.origQty}</td>
+        <td>{item.style}</td>
+        <td>{item.vendor}</td>
+        <td>{item.manufacturer}</td>
+        <td>{item.description}</td>
       </tr>
     ));
   }
 
   render() {
-    const tableStyle = {
-      borderCollapse: 'collapse',
-      tableLayout: 'fixed',
-    };
-
-    const thStyle = {
-      border: '2px solid black',
-      padding: '5px',
-    };
-
     return (
-      <table style={tableStyle}>
+      <Table striped bordered condensed hover>
         <thead>
           <tr>
-            <th style={thStyle}>Record ID</th>
-            <th style={thStyle}>Product</th>
-            <th style={thStyle}>Category</th>
-            <th style={thStyle}>On Hand</th>
-            <th style={thStyle}>Original Quantity</th>
-            <th style={thStyle}>Style</th>
-            <th style={thStyle}>Vendor</th>
-            <th style={thStyle}>Manufacturer</th>
-            <th style={thStyle}>Description</th>
+            <th>Record ID</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>On Hand</th>
+            <th>Original Quantity</th>
+            <th>Style</th>
+            <th>Vendor</th>
+            <th>Manufacturer</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           {this.renderItems()}
         </tbody>
-      </table>
+      </Table>
     );
   }
 }
