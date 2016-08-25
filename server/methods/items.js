@@ -14,9 +14,14 @@ export default function () {
       const item = {
         _id,
         recordId: itemData.recordId,
-        productName: itemData.productName,
+        product: itemData.product,
+        category: itemData.category,
         onHand: itemData.quantity,
         origQty: itemData.quantity,
+        style: itemData.style,
+        vendor: itemData.vendor,
+        manufacturer: itemData.manufacturer,
+        description: itemData.description,
         createdAt,
       };
       Items.insert(item);
