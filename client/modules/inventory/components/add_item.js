@@ -12,7 +12,7 @@ const FieldGroup = ({ id, label, help, ...props }) => (
     <Col componentClass={ControlLabel} xs={3} sm={3} md={3} lg={3}>
       {label}
     </Col>
-    <Col xs={9} sm={9} md={9} lg={9}>
+    <Col xs={8} sm={8} md={8} lg={8}>
       <FormControl {...props} />
     </Col>
     {help && <HelpBlock>{help}</HelpBlock>}
@@ -56,125 +56,127 @@ class AddItem extends Component {
 
   render() {
     return (
-      <Form
-        horizontal
-        onSubmit={this.handleSubmit.bind(this)}
-      >
-
-        {/* Form Name */}
-        <legend>Add Item</legend>
-
-        <Col xs={12} sm={12} md={6} lg={4}>
-          {/* Select Category */}
-          <FieldGroup
-            id="category"
-            label="Category"
-            componentClass="select"
-            required
-            value={this.state.category}
-            onChange={this.setValue.bind(this, 'category')}
-          >
-            <option value="Beams">Beams</option>
-            <option value="Frames">Frames</option>
-          </FieldGroup>
-
-          {/* Select Product */}
-          <FieldGroup
-            id="product"
-            label="Product"
-            componentClass="select"
-            required
-            value={this.state.product}
-            onChange={this.setValue.bind(this, 'product')}
-          >
-            <option value="Beam">Beam</option>
-            <option value="Frame">Frame</option>
-          </FieldGroup>
-
-          {/* Record ID input*/}
-          <FieldGroup
-            id="recordid"
-            type="text"
-            label="Record ID*"
-            placeholder="XX-0000"
-            required
-            value={this.state.recordId}
-            onChange={this.setValue.bind(this, 'recordId')}
-          />
-
-          {/* Quantity input*/}
-          <FieldGroup
-            id="quantity"
-            type="number"
-            label="Quantity*"
-            required
-            value={this.state.quantity}
-            onChange={this.setValue.bind(this, 'quantity')}
-          />
-
-          {/* Select Style */}
-          <FieldGroup
-            id="style"
-            label="Style"
-            componentClass="select"
-            value={this.state.style}
-            onChange={this.setValue.bind(this, 'style')}
-          >
-            <option value="Step">Step</option>
-            <option value="3/4 Step">3/4 Step</option>
-          </FieldGroup>
-        </Col>
-
-        <Col xs={12} sm={12} md={6} lg={4}>
-          {/* Select Vendor */}
-          <FieldGroup
-            id="vendor"
-            label="Vendor"
-            componentClass="select"
-            value={this.state.vendor}
-            onChange={this.setValue.bind(this, 'vendor')}
-          >
-            <option value="Company A">Company A</option>
-            <option value="Company B">Company B</option>
-          </FieldGroup>
-
-          {/* Select Manufacturer */}
-          <FieldGroup
-            id="manufacturer"
-            label="Manufacturer"
-            componentClass="select"
-            value={this.state.manufacturer}
-            onChange={this.setValue.bind(this, 'manufacturer')}
-          >
-            <option value="Company A">Company A</option>
-            <option value="Company B">Company B</option>
-          </FieldGroup>
-
-          {/* Textarea */}
-          <FieldGroup
-            id="description"
-            label="Description"
-            componentClass="textarea"
-            value={this.state.description}
-            onChange={this.setValue.bind(this, 'description')}
-          />
-
-          {/* File Button */}
-          <FieldGroup
-            id="image"
-            label="Image"
-            type="file"
-          />
-        </Col>
-
-        {/* Button */}
-        <Button
-          type="submit"
-          bsStyle="primary"
+      <div className="container">
+        <Form
+          horizontal
+          onSubmit={this.handleSubmit.bind(this)}
         >
-          Save
-        </Button>
-      </Form>
+
+          {/* Form Name */}
+          <legend>Add Item</legend>
+
+          <Col xs={12} sm={12} md={6} lg={4}>
+            {/* Select Category */}
+            <FieldGroup
+              id="category"
+              label="Category"
+              componentClass="select"
+              required
+              value={this.state.category}
+              onChange={this.setValue.bind(this, 'category')}
+            >
+              <option value="Beams">Beams</option>
+              <option value="Frames">Frames</option>
+            </FieldGroup>
+
+            {/* Select Product */}
+            <FieldGroup
+              id="product"
+              label="Product"
+              componentClass="select"
+              required
+              value={this.state.product}
+              onChange={this.setValue.bind(this, 'product')}
+            >
+              <option value="Beam">Beam</option>
+              <option value="Frame">Frame</option>
+            </FieldGroup>
+
+            {/* Record ID input*/}
+            <FieldGroup
+              id="recordid"
+              type="text"
+              label="Record ID*"
+              placeholder="XX-0000"
+              required
+              value={this.state.recordId}
+              onChange={this.setValue.bind(this, 'recordId')}
+            />
+
+            {/* Quantity input*/}
+            <FieldGroup
+              id="quantity"
+              type="number"
+              label="Quantity*"
+              required
+              value={this.state.quantity}
+              onChange={this.setValue.bind(this, 'quantity')}
+            />
+
+            {/* Select Style */}
+            <FieldGroup
+              id="style"
+              label="Style"
+              componentClass="select"
+              value={this.state.style}
+              onChange={this.setValue.bind(this, 'style')}
+            >
+              <option value="Step">Step</option>
+              <option value="3/4 Step">3/4 Step</option>
+            </FieldGroup>
+          </Col>
+
+          <Col xs={12} sm={12} md={6} lg={4}>
+            {/* Select Vendor */}
+            <FieldGroup
+              id="vendor"
+              label="Vendor"
+              componentClass="select"
+              value={this.state.vendor}
+              onChange={this.setValue.bind(this, 'vendor')}
+            >
+              <option value="Company A">Company A</option>
+              <option value="Company B">Company B</option>
+            </FieldGroup>
+
+            {/* Select Manufacturer */}
+            <FieldGroup
+              id="manufacturer"
+              label="Manufacturer"
+              componentClass="select"
+              value={this.state.manufacturer}
+              onChange={this.setValue.bind(this, 'manufacturer')}
+            >
+              <option value="Company A">Company A</option>
+              <option value="Company B">Company B</option>
+            </FieldGroup>
+
+            {/* Textarea */}
+            <FieldGroup
+              id="description"
+              label="Description"
+              componentClass="textarea"
+              value={this.state.description}
+              onChange={this.setValue.bind(this, 'description')}
+            />
+
+            {/* File Button */}
+            <FieldGroup
+              id="image"
+              label="Image"
+              type="file"
+            />
+          </Col>
+
+          {/* Button */}
+          <Button
+            type="submit"
+            bsStyle="primary"
+          >
+            Save
+          </Button>
+        </Form>
+      </div>
     );
   }
 }

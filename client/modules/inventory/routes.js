@@ -12,7 +12,9 @@ export default function (injectDeps, { FlowRouter }) {
     name: 'Manage Inventory',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<ManageInventory />)
+        content: () => (
+          <ManageInventory />
+        )
       });
     }
   });
@@ -21,7 +23,9 @@ export default function (injectDeps, { FlowRouter }) {
     name: 'Add Inventory',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<AddItem />)
+        content: () => (
+          <AddItem />
+        )
       });
     }
   });

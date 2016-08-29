@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Table from 'react-bootstrap/lib/Table';
+import Col from 'react-bootstrap/lib/Col';
 
 // App component - represents the whole app
 class ManageInventory extends Component {
@@ -21,24 +22,26 @@ class ManageInventory extends Component {
 
   render() {
     return (
-      <Table striped bordered condensed hover>
-        <thead>
-          <tr>
-            <th>Record ID</th>
-            <th>Product</th>
-            <th>Category</th>
-            <th>On Hand</th>
-            <th>Original Quantity</th>
-            <th>Style</th>
-            <th>Vendor</th>
-            <th>Manufacturer</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderItems()}
-        </tbody>
-      </Table>
+      <Col xs={12} sm={12} md={10} mdOffset={1} lg={10} lgOffset={1}>
+        <Table striped bordered condensed hover>
+          <thead>
+            <tr>
+              <th>Record ID</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>On Hand</th>
+              <th>Original Quantity</th>
+              <th>Style</th>
+              <th>Vendor</th>
+              <th>Manufacturer</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderItems()}
+          </tbody>
+        </Table>
+      </Col>
     );
   }
 }

@@ -6,9 +6,7 @@ const Layout = ({content = () => null }) => (
     <header>
       <TopNav />
     </header>
-    <div>
-      {content()}
-    </div>
+    {content()}
   </div>
 );
 
