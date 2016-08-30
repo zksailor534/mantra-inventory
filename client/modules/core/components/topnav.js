@@ -17,7 +17,6 @@ class TopNav extends Component {
     return (
       <Nav pullRight>
         <NavItem eventKey={'n.1'} href="/login">Sign In</NavItem>
-        <NavItem eventKey={'n.2'} href="/sign-up">Sign Up</NavItem>
       </Nav>
     );
   }

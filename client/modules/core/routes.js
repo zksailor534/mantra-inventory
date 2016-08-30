@@ -13,9 +13,7 @@ export default function (injectDeps, { FlowRouter, Accounts }) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (
-          <div className="container">
-            <Home />
-          </div>
+          <Home />
         )
       });
     }

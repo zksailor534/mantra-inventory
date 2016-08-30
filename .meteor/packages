@@ -21,4 +21,4 @@ shell-server                  # Server-side component of the `meteor shell` comm
 kadira:flow-router            # Carefully Designed Client Side Router for Meteor
 std:accounts-bootstrap        # Accounts UI for React in Meteor
 accounts-password             # Password support for accounts
-fourseven:scss                # Node-sass wrapped to work with meteor
+fourseven:scss                # Style with attitude. Sass and SCSS support for Meteor.js

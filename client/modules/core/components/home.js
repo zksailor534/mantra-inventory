@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Home = () => (
-  <div>
+  <div className="container">
     <p>
       Welcome to Mantra 0.2.0.
     </p>
