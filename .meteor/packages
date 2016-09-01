@@ -22,3 +22,5 @@ kadira:flow-router            # Carefully Designed Client Side Router for Meteor
 std:accounts-bootstrap        # Accounts UI for React in Meteor
 accounts-password             # Password support for accounts
 fourseven:scss                # Style with attitude. Sass and SCSS support for Meteor.js
+alanning:roles                # Authorization package for Meteor
+aldeed:collection2            # Automatic validation of insert and update operations

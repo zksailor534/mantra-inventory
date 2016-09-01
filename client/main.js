@@ -1,6 +1,6 @@
 import { createApp } from 'mantra-core';
 import initContext from './configs/context';
-import accountsConfig from './configs/accounts_config';
+import accountsConfig from './configs/accounts';
 
 // modules
 import coreModule from './modules/core';
