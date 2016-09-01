@@ -5,11 +5,22 @@ import MainLayout from '/client/modules/core/components/main_layout';
 import ManageInventory from './containers/manage_inventory';
 import AddItem from './containers/add_item';
 
-export default function (injectDeps, { FlowRouter }) {
+export default function (injectDeps, { Meteor, FlowRouter }) {
   const MainLayoutCtx = injectDeps(MainLayout);
 
-  FlowRouter.route('/inventory/manage', {
-    name: 'Manage Inventory',
+  const publicRedirect = (context, redirect) => {
+    if ( !Meteor.userId() ) {
+      redirect('login', context.params);
+    }
+  };
+
+  const inventoryRoutes = FlowRouter.group({
+    name: 'inventory-routes',
+    triggersEnter: [ publicRedirect ],
+  });
+
+  inventoryRoutes.route('/inventory/manage', {
+    name: 'inventory-main',
     action() {
       mount(MainLayoutCtx, {
         content: () => (
@@ -19,8 +30,8 @@ export default function (injectDeps, { FlowRouter }) {
     }
   });
 
-  FlowRouter.route('/inventory/new', {
-    name: 'Add Inventory',
+  inventoryRoutes.route('/inventory/new', {
+    name: 'inventory-new',
     action() {
       mount(MainLayoutCtx, {
         content: () => (

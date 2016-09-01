@@ -5,11 +5,22 @@ import Col from 'react-bootstrap/lib/Col';
 import MainLayout from './components/main_layout';
 import Home from './components/home';
 
-export default function (injectDeps, { FlowRouter, Accounts }) {
+export default function (injectDeps, { Meteor, FlowRouter, Accounts }) {
   const MainLayoutCtx = injectDeps(MainLayout);
 
-  FlowRouter.route('/', {
-    name: 'home',
+  const publicRedirect = (context, redirect) => {
+    if ( Meteor.userId() ) {
+      redirect('inventory-main', context.params);
+    }
+  };
+
+  const publicRoutes = FlowRouter.group({
+    name: 'public-routes',
+    triggersEnter: [ publicRedirect ],
+  });
+
+  publicRoutes.route('/', {
+    name: 'public',
     action() {
       mount(MainLayoutCtx, {
         content: () => (
@@ -19,7 +30,7 @@ export default function (injectDeps, { FlowRouter, Accounts }) {
     }
   });
 
-  FlowRouter.route('/login', {
+  publicRoutes.route('/login', {
     name: 'login',
     action() {
       mount(MainLayoutCtx, {
