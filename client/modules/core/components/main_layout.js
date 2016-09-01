@@ -1,10 +1,10 @@
 import React from 'react';
-import TopNav from '../containers/topnav';
+import Navigation from '../containers/navigation';
 
 const Layout = ({content = () => null }) => (
   <div>
     <header>
-      <TopNav />
+      <Navigation />
     </header>
     {content()}
   </div>

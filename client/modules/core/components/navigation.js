@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
-class TopNav extends Component {
+class Navigation extends Component {
+  userName() {
+    const user = Meteor.user();
+    const name = user && user.profile ? user.profile.name : '';
+    return user ? `${name.first} ${name.last}` : '';
+  }
+
   accountLinks() {
     if (Meteor.userId()) {
       return (
         <Nav pullRight>
-          <NavItem eventKey={'n.1'} href="#profile">{Meteor.user().emails[0].address}</NavItem>
-          <NavItem eventKey={'n.2'} href="/logout">Logout</NavItem>
+          <NavDropdown eventKey={'n'} title={ this.userName() } id="user-dropdown">
+            <MenuItem eventKey={'n.1'} onClick={ this.handleLogout() }>Logout</MenuItem>
+          </NavDropdown>
         </Nav>
       );
     }
     return (
       <Nav pullRight>
-        <NavItem eventKey={'n.1'} href="/login">Sign In</NavItem>
+        <NavItem eventKey={'n'} href="/login">Sign In</NavItem>
       </Nav>
     );
   }
+
   render() {
     return (
       <Navbar>
@@ -39,4 +45,4 @@ class TopNav extends Component {
   }
 }
 
-export default TopNav;
+export default Navigation;

@@ -1,8 +1,8 @@
 const {describe, it} = global;
 import {expect} from 'chai';
 import {shallow} from 'enzyme';
-import TopNav from '../topnav';
+import Navigation from '../navigation';
 
-describe('core.components.topnav', () => {
+describe('core.components.navigation', () => {
   it('should do something');
 });

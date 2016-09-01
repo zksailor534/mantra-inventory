@@ -1,7 +1,7 @@
 // import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 import { useDeps, composeAll } from 'mantra-core';
 
-import TopNav from '../components/topnav';
+import Navigation from '../components/navigation';
 
 // export const composer = ({ context }, onData) => {
 //   const { Meteor, Collections } = context();
@@ -17,4 +17,4 @@ export const depsMapper = (context) => ({
 export default composeAll(
   // composeWithTracker(composer),
   useDeps(depsMapper)
-)(TopNav);
+)(Navigation);

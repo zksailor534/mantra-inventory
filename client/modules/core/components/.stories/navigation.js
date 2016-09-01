@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { setComposerStub } from 'react-komposer';
-import TopNav from '../topnav';
+import Navigation from '../navigation';
 
-storiesOf('core.TopNav', module)
+storiesOf('core.Navigation', module)
   .add('default view', () => {
     return (
-      <TopNav />
+      <Navigation />
     );
   });
